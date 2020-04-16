@@ -8,7 +8,7 @@ Website Blog App.
 # Installation :building_construction:
 1. Clone the repository. `git clone https://github.com/ProtexCreative/Website-Blog`
 2. `cd Website-Blog`
-3. Create a Virtual Environment. `E:\\Website-Blog>py -m venv web_env`
+3. Create a Virtual Environment. `py -m venv web_env`
 4. Activate Virtual Environment. `.\web_env\Scripts\activate`
 5. Install Required Packages. `pip install -r requirements.txt`
 6. `cd web_app`
