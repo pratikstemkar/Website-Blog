@@ -15,10 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from blog import views as blog_views
+from user import views as user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # Blog App Views
     path('', blog_views.home, name='home'),
     path('about/', blog_views.about, name='about'),
+    path('contact/', blog_views.contact, name='contact'),
+
+    # User App Views
+    path('login/', user_views.login, name='login'),
+    path('register/', user_views.register, name='register')
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
