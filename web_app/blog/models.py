@@ -15,15 +15,15 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    # def get_absolute_url(self):
-    #     return reverse('post-detail', kwargs = {'pk' : self.pk})
+    def get_absolute_url(self):
+        return reverse('post-detail', kwargs = {'pk' : self.pk})
 
     def save(self, *args, **kwargs):
         super().save()
 
         img = Image.open(self.post_image.path)
 
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
+        if img.height > 600 or img.width > 600:
+            output_size = (600, 600)
             img.thumbnail(output_size)
             img.save(self.post_image.path)
